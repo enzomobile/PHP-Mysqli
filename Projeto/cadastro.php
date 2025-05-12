@@ -6,13 +6,14 @@
     <title>CRUD - Teste</title>
 </head>
 <body>
-    <form action="connection.php" method="POST">
+    <form action="index.php" method="POST">
         <label for="Nome">Insira o nome:</label>
-        <input type="text" name="Nome" require><br>
+        <input type="text" name="Nome" required><br>
         <label for="Email"">Insira o e-mail</label>
-        <input type="text" name="Email" require><br>
+        <input type="text" name="Email" required><br>
         <label for="Senha">Insira sua senha:</label>
-        <input type="password" name="Senha" require>
+        <input type="password" name="Senha" required><br><br>
+        <button type="submit">Cadastrar</button>
     </form>
 </body>
 </html>

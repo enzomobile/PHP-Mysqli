@@ -6,6 +6,8 @@
     <title>Bem vindo</title>
 </head>
 <body>
-    
+    <?php
+        require_once 'connection.php';
+    ?>
 </body>
 </html>

@@ -7,9 +7,17 @@
             if (mysqli_connect_error()) {
                 echo "Falha ao conectar ao MySQL: " . mysqli_connect_error();
             } else {
-                echo "Conexão bem-sucedida.";
+                echo "Conexão";
             }
+        }
+
+        public function Cadastrar($data) {
+            echo "<pre>"; print_r($data);
         }
     }
     $connection = new Connection();
+
+    if ($_POST) {
+        $connection->Cadastrar($_POST);
+    }
 ?>
