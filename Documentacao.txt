@@ -1,2 +1,5 @@
 Arquivo para texto de aprendizados.
 
+A primeira coisa que eu fiz foi criar um arquivo para armazenar a conexão com o banco de dados, dentro de um objeto ao qual vou referenciar sempre que chamar a conexão.
+Após isso, testei se a conexão funcionou, tudo certo.
+Adicionei arquivo de SQL para realizar continuação fora de casa.

@@ -11,5 +11,5 @@
             }
         }
     }
-    $user = new Connection();
+    $connection = new Connection();
 ?>
