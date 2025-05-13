@@ -1,3 +1,8 @@
+<?php
+    require_once 'connection.php';
+
+    
+?>
 <!DOCTYPE html>
 <html lang="pr-br">
 <head>
@@ -6,8 +11,6 @@
     <title>Bem vindo</title>
 </head>
 <body>
-    <?php
-        require_once 'connection.php';
-    ?>
+    
 </body>
 </html>
