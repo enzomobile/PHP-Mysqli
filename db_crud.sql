@@ -34,7 +34,7 @@ CREATE TABLE `tb_users` (
   `id_users` int(4) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `senha` varchar(20) NOT NULL
+  `senha` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
