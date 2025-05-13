@@ -1,3 +1,8 @@
+<?php
+    require_once '../Process/connection.php';
+
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
