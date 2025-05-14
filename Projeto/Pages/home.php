@@ -17,10 +17,12 @@
     if (isset($_GET['erro'])) {
         if ($_GET['erro'] === 'atualizar') {
             echo "<script>alert('Erro ao atualizar informações!');</script>";
-        } else if ($_GET['erro'] === 'preencher') {
+        } elseif ($_GET['erro'] === 'preencher') {
             echo "<script>alert('Preencha todos os campos!');</script>";
-        } else if ($_GET['erro'] === 'login') {
+        } elseif ($_GET['erro'] === 'login') {
             echo "<script>alert('Você precisa fazer login primeiro!');</script>";
+        } elseif ($_GET['erro'] === 'deletar') {
+            echo "<script>alert('Erro ao deletar conta!');</script>";
         }
     }
 ?>

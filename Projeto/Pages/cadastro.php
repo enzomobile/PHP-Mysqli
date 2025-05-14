@@ -3,9 +3,9 @@
         if ($_GET['erro'] == 'email') {
             echo "<script>alert('Email já cadastrado!');</script>";
             echo '<script>history.back();</script>';
-        } else if ($_GET['erro'] === 'campos') {
+        } elseif ($_GET['erro'] === 'campos') {
             echo "<script>alert('Preencha todos os campos!');</script>";
-        } else if ($_GET['erro'] === 'cadastro') {
+        } elseif ($_GET['erro'] === 'cadastro') {
             echo "<script>alert('Erro ao cadastrar!');</script>";
         }
     }

@@ -11,6 +11,9 @@
         }
         echo '<script>history.back();</script>';
     }
+    if (isset($_GET['sucesso'])) {
+        echo "<script>alert('Conta deletada com sucesso!');</script>";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
