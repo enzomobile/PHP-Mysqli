@@ -1,11 +1,13 @@
 <?php
     if (isset($_GET['erro'])) {
-        if ($_GET['erro'] == 'senha') {
+        if ($_GET['erro'] === 'senha') {
             echo "<script>alert('Senha incorreta!');</script>";
-        } else if ($_GET['erro'] === 'email') {
+        } elseif ($_GET['erro'] === 'email') {
             echo "<script>alert('Email não encontrado!');</script>";
-        } else if ($_GET['erro'] === 'campos') {
+        } elseif ($_GET['erro'] === 'campos') {
             echo "<script>alert('Preencha todos os campos!');</script>";
+        } elseif ($_GET['erro'] === 'login') {
+            echo "<script>alert('Você precisa fazer login!');</script>";
         }
         echo '<script>history.back();</script>';
     }
