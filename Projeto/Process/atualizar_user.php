@@ -13,7 +13,7 @@
         }
 
         if (isset($novo_nome)) {
-            $update = 'UPDATE tb_users SET nome = ? WHERE id = ?';
+            $update = 'UPDATE tb_users SET nome = ? WHERE id_users = ?';
             $stmt = $mysqli->prepare($update);
             $stmt->bind_param('si', $novo_nome, $_SESSION['id']);
             $stmt->execute();
@@ -29,7 +29,7 @@
         }
 
         if (isset($novo_email)) {
-            $update = 'UPDATE tb_users SET email = ? WHERE id = ?';
+            $update = 'UPDATE tb_users SET email = ? WHERE id_users = ?';
             $stmt = $mysqli->prepare($update);
             $stmt->bind_param('si', $novo_email, $_SESSION['id']);
             $stmt->execute();
@@ -45,7 +45,7 @@
         }
 
         if (isset($nova_senha)) {
-            $update = 'UPDATE tb_users SET senha = ? WHERE id = ?';
+            $update = 'UPDATE tb_users SET senha = ? WHERE id_users = ?';
 
             $senha_nova = password_hash($nova_senha, PASSWORD_DEFAULT);
             $stmt = $mysqli->prepare($update);
