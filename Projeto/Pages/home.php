@@ -9,6 +9,20 @@
         header('Location: ../Pages/login.php');
         exit();
     }
+    if (isset($_GET['sucesso'])) {
+        if ($_GET['sucesso'] === 'atualizar') {
+            echo "<script>alert('Informações atualizadas com sucesso!');</script>";
+        }
+    }
+    if (isset($_GET['erro'])) {
+        if ($_GET['erro'] === 'atualizar') {
+            echo "<script>alert('Erro ao atualizar informações!');</script>";
+        } else if ($_GET['erro'] === 'preencher') {
+            echo "<script>alert('Preencha todos os campos!');</script>";
+        } else if ($_GET['erro'] === 'login') {
+            echo "<script>alert('Você precisa fazer login primeiro!');</script>";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,10 +41,13 @@
     <h2>Atualizar Informações</h2>
     <form action="../Process/atualizar_user.php" method="POST">
         <label for="novo_nome">Novo Nome:</label>
-        <input type="text" id="novo_nome" name="novo_nome" required>
+        <input type="text" id="novo_nome" name="novo_nome" pattern="[A-Za-zÀ-ÿ\s]+" title="Somente letras e espaços são permitidos" placeholder="Digite seu novo nome" required>
         <br>
         <label for="novo_email">Novo Email:</label>
-        <input type="email" id="novo_email" name="novo_email" required>
+        <input type="email" id="novo_email" name="novo_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Digite um email válido" placeholder="exemplo@email.com" required>
+        <br>
+        <label for="nova_senha">Nova Senha:</label>
+        <input type="password" id="nova_senha" name="nova_senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma minúscula, um número e um caractere especial." placeholder="Digite sua nova senha" required>
         <br>
         <button type="submit">Atualizar</button>
     </form>
