@@ -3,3 +3,6 @@ Arquivo para texto de aprendizados.
 A primeira coisa que eu fiz foi criar um arquivo para armazenar a conexão com o banco de dados, dentro de um objeto ao qual vou referenciar sempre que chamar a conexão.
 Após isso, testei se a conexão funcionou, tudo certo.
 Adicionei arquivo de SQL para realizar continuação fora de casa.
+
+Nesse projeto, eu criei separação de arquivos em pastas, tendo as telas e os processos separados. Adicionei pastas admin, para a criação de um painel de controle de usuários. Usei os métodos da classe mysqli para conexão com banco, INSERT, UPDATE, SELECT e DELETE. Até agora, aprendi bastante coisa.
+Última alteração: Adicionei a coluna 'admin' na tabela, para verificar se o usuário é ou não autorizado no dashboard.
