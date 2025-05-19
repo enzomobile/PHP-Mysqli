@@ -1,6 +1,5 @@
 <?php
     require_once '../connection.php';
-    session_destroy();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
@@ -11,13 +10,12 @@
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
 
-        if ($result->admin != 1) {
-            header('Location: ../../Pages/Admin/entrar.php?erro=nao_admin');
+        if (!$user || $user['admin'] != 1) {
+            header('Location: ../../Pages/Admin/entrar.php');
             exit();
         } else {
-            $user = $result->fetch_assoc();
-
             if (password_verify($senha, $user['senha'])) {
                 session_destroy();
                 session_start();
@@ -26,12 +24,12 @@
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['admin'] = $user['admin'];
 
-                header('Location: ../Pages/Admin/home.php');
+                header('Location: ../../Pages/Admin/home.php');
                 $stmt->close();
                 $mysqli->close();
                 exit();
             } else {
-                header('Location: ../Pages/Admin/entrar.php?erro=senha');
+                header('Location: ../../Pages/Admin/entrar.php');
                 $stmt->close();
                 $mysqli->close();
                 exit();
