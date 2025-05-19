@@ -1,5 +1,6 @@
 <?php
-    require_once '../Process/connection.php';
+    require_once '../connection.php';
+    session_destroy();
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email = $_POST['email'];
@@ -26,15 +27,18 @@
                 $_SESSION['admin'] = $user['admin'];
 
                 header('Location: ../Pages/Admin/home.php');
+                $stmt->close();
+                $mysqli->close();
                 exit();
             } else {
                 header('Location: ../Pages/Admin/entrar.php?erro=senha');
+                $stmt->close();
+                $mysqli->close();
                 exit();
             }
         }
     } else {
-        header('Location: ../Pages/Admin/entrar.php');
+        header('Location: ../../Pages/Admin/entrar.php');
         exit();
-
     }
 ?>

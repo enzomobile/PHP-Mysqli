@@ -16,6 +16,7 @@
                 $stmt->fetch();
                 if (password_verify($senha, $senha_hash)) {
                     // Login successful
+                    session_destroy();
                     session_start();
                     $_SESSION['nome'] = $nome;
                     $_SESSION['email'] = $email;
